@@ -14,6 +14,7 @@ arg_enum! {
     pub enum Task {
         Package,
         Build,
+        Lambda, // required to avoid conflicts with the cargo command line syntax
     }
 }
 
@@ -26,7 +27,7 @@ struct Opt {
     rust_version: String,
 
     /// Commands to process
-    #[structopt(required = true, possible_values = &Task::variants(), min_values = 1, case_insensitive = true)]
+    #[structopt(required = true, possible_values = &Task::variants(), min_values = 2, case_insensitive = true)]
     commands: Vec<Task>,
 }
 
@@ -36,12 +37,14 @@ fn main() {
     for cmd in opt.commands.iter() {
         let result = match cmd {
             Task::Build => build(&opt),
-            Task::Package => package(&opt)
+            Task::Package => package(&opt),
+            _ => Ok(())
         };
 
         if let Err(m) = result {
-            log::warn("Something went wrong".to_owned());
-            log::error(format!("{:?}", m))
+            log::warn(format!("Failed to execute task '{}'", cmd));
+            log::error(format!("{}", m));
+            break;
         }
     }
 }

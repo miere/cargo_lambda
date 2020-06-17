@@ -7,7 +7,7 @@ pub type Result<T> = std::result::Result<T, KnownFailures>;
 #[derive(ThisError, Debug)]
 pub enum KnownFailures {
 
-    #[error("Failed to Compile")]
+    #[error("Failed to build or compile your software")]
     FailedToCompile,
 
     #[error(transparent)]
