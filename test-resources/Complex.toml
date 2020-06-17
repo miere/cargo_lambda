@@ -1,0 +1,22 @@
+[package]
+name = "hello-world"
+version = "1.0.0"
+
+[[bin]]
+name = "cream"
+path = "src/extra/cream.rs"
+
+[[bin]]
+name = "ice"
+path = "src/extra/ice.rs"
+
+[lambda]
+output_package_path = "hello-world.zip"
+build_command = "cargo build"
+
+# Unknown flags intentionally inserted here. The parser should
+# not fail when tries to interpret these flags and found no matching
+# attribute on our struct.
+target_group_arn = "arn::::sample"
+url_pattern = "/hello/world"
+unknown_flag = true
