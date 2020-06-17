@@ -29,6 +29,17 @@ The basic syntax is `cargo lambda [OPTS]` where OPTS stands for:
 Sample command that builds and generates an AWS Lambda zip file.
 ```shell
 $ cargo lambda build package
+Compiling as Lambda compatible binary.
+Using Docker to build the Lambda image. It may take a while to print the output messages.
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded tokio v0.2.21
+  <<trimmed for simplicity>>
+   Compiling cargo-serverless v0.1.0 (/home/rust/src)
+    Finished release [optimized] target(s) in 58.41s
+Generating Lambda package...
+Package generated: target/ice-lambda.zip
+Package generated: target/cream-lambda.zip
 ```
 
 ## Requirements
