@@ -1,4 +1,6 @@
 # cargo_lambda
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmiere%2Fcargo_lambda.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmiere%2Fcargo_lambda?ref=badge_shield)
+
 A Cargo plugin to generate and package musl-based binaries that can be uploaded as AWS Lambda functions.
 
 ## Installing
@@ -80,3 +82,5 @@ Looking at the existing issues is a great way to find something to contribute on
 
 ## License
 This project is released under the Apache License 2 terms.
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmiere%2Fcargo_lambda.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmiere%2Fcargo_lambda?ref=badge_large)
